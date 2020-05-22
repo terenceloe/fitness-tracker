@@ -13,3 +13,7 @@ a:hover, a:active {
     margin: 0;
 }
 
+.logout-link {
+    cursor: pointer;
+}
+
