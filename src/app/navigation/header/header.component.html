@@ -7,10 +7,10 @@
     <div><a routerLink="/">Fitness Tracker</a></div>
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-            <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
-            <li *ngIf="!isAuth"><a routerLink="/login">Login</a></li>
-            <li *ngIf="isAuth"><a routerLink="/training">Training</a></li>
-            <li *ngIf="isAuth"><a class="logout-link" (click)="onLogout()">Logout</a></li>
+            <li *ngIf="!(isAuth$ | async)"><a routerLink="/signup">Signup</a></li>
+            <li *ngIf="!(isAuth$ | async)"><a routerLink="/login">Login</a></li>
+            <li *ngIf="isAuth$ | async"><a routerLink="/training">Training</a></li>
+            <li *ngIf="isAuth$ | async"><a class="logout-link" (click)="onLogout()">Logout</a></li>
         </ul>
     </div>
 </mat-toolbar>
